@@ -10,7 +10,7 @@ const PostItem = ({postID,thumbnail,title,category,desc,authorID,createdAt}) => 
   return (
     <article className="post">
         <div className="post-thumbnail">
-            <img src={`http://localhost:5000/uploads/${thumbnail}`} alt={postTitle} />
+            <img src={`https://blog-backend-kyxz.onrender.com/uploads/${thumbnail}`} alt={postTitle} />
         </div>
         <div className="post-content">
             <Link to={`/posts/${postID}`}>
