@@ -30,7 +30,7 @@ const PostAuthor = ({createdAt,authorID}) => {
   return (
     <Link to={`/posts/users/${authorID}`} className="post-author">
       <div className="post-author-avatar">
-        <img src={`http://localhost:5000/uploads/${author?.avatar}`} alt="" />
+        <img src={`https://blog-backend-kyxz.onrender.com/uploads/${author?.avatar}`} alt="" />
       </div>
       <div className="post-avatar-details">
         <h5>By: {author.name}</h5>
