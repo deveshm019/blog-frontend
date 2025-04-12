@@ -24,7 +24,7 @@ const Register = () => {
   const registerUser = async(e)=>{
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/api/users/register`, userData)
+      const response = await axios.post(`https://blog-backend-kyxz.onrender.com/api/users/register`, userData)
       const newUser = response.data;
       if(!newUser){
         setError("Registration failed!")
