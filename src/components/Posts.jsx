@@ -14,7 +14,7 @@ const Posts = () => {
       const fetchPosts = async()=>{
         setIsloading(true)
         try {
-          const response = await axios.get(`https://blog-backend-kyxz.onrender.com//api/posts`)
+          const response = await axios.get(`https://blog-backend-kyxz.onrender.com/api/posts`)
           setPosts(response?.data)
         } catch (error) {
           console.log(error)
