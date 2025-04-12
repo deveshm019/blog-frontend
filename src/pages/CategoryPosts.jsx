@@ -16,7 +16,7 @@ const CategoryPosts = () => {
     const fetchPosts = async()=>{
       setIsloading(true)
       try {
-        const response = await axios.get(`http://localhost:5000/api/posts/categories/${category}`)
+        const response = await axios.get(`https://blog-backend-kyxz.onrender.com/api/posts/categories/${category}`)
         setPosts(response?.data)
       } catch (error) {
         console.log(error)
