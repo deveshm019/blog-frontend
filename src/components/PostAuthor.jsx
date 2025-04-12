@@ -18,7 +18,7 @@ const PostAuthor = ({createdAt,authorID}) => {
   useEffect(()=>{
     const getAuthor = async()=>{
       try {
-        const response = await axios.get(`http://localhost:5000/api/users/${authorID}`)
+        const response = await axios.get(`https://blog-backend-kyxz.onrender.com/api/users/${authorID}`)
         setAuthor(response?.data)
       } catch (error) {
         console.log(error)
