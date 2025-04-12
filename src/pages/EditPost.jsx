@@ -69,7 +69,7 @@ const EditPost = () => {
     const getPost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/posts/${id}`
+          `https://blog-backend-kyxz.onrender.com/api/posts/${id}`
         );
         setTitle(response.data.title);
         setDesc(response.data.desc);
@@ -90,7 +90,7 @@ const EditPost = () => {
 
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/posts/${id}`,
+        `https://blog-backend-kyxz.onrender.com/api/posts/${id}`,
         postData,
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
