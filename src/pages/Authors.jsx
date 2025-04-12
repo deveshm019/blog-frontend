@@ -15,7 +15,7 @@ const Authors = () => {
     const getAuthors = async()=>{
       setIsLoading(true)
       try {
-        const response = await axios.get(`http://localhost:5000/api/users/getAuthors`)
+        const response = await axios.get(`https://blog-backend-kyxz.onrender.com/api/users/getAuthors`)
         console.log(response.data)
         setAuthors(response.data)
       } catch (error) {
@@ -37,7 +37,7 @@ const Authors = () => {
             authors.map(({_id: id,avatar,name,posts})=>{
               return <Link key={id} to={`/posts/users/${id}`} className="author">
                 <div className="author-avatar">
-                  <img src={`http://localhost:5000/uploads/${avatar}`} alt={`Image of ${name}`} />
+                  <img src={`https://blog-backend-kyxz.onrender.com/uploads/${avatar}`} alt={`Image of ${name}`} />
                 </div>
                 <div className="author-info">
                   <h4>{name}</h4>
