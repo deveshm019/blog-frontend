@@ -75,7 +75,7 @@ const CreatePost = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/posts`,
+        `https://blog-backend-kyxz.onrender.com/api/posts`,
         postData,
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );
