@@ -26,7 +26,7 @@ const Dashboard = () => {
     const fetchPosts = async()=>{
       setIsLoading(true)
       try {
-        const response = await axios.get(`http://localhost:5000/api/posts/users/${id}`,{withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
+        const response = await axios.get(`https://blog-backend-kyxz.onrender.com/api/posts/users/${id}`,{withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
         setPosts(response.data)
 
       } catch (error) {
@@ -50,7 +50,7 @@ const Dashboard = () => {
               return <article key={post.id} className='dashboard-post'>
                 <div className="dashboard-post-info">
                   <div className="dashboard-post-thumbnail">
-                    <img src={`http://localhost:5000/uploads/${post.thumbnail}`} alt="Post Thumbnail" />
+                    <img src={`https://blog-backend-kyxz.onrender.com/uploads/${post.thumbnail}`} alt="Post Thumbnail" />
                   </div>
                   <h5>{post.title}</h5>
                 </div>
