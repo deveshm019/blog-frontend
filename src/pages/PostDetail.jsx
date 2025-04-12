@@ -20,7 +20,7 @@ const PostDetail = () => {
     const getPost = async()=>{
       setIsLoading(true)
       try {
-        const response = await axios.get(`http://localhost:5000/api/posts/${id}`)
+        const response = await axios.get(`https://blog-backend-kyxz.onrender.com/api/posts/${id}`)
         setPosts(response.data)
       } catch (error) {
         setError(error)
@@ -49,7 +49,7 @@ const PostDetail = () => {
         </div>
         <h1>{post.title}</h1>
         <div className="post-detail-thumbnail">
-          <img src={`http://localhost:5000/uploads/${post.thumbnail}`} alt="" />
+          <img src={`https://blog-backend-kyxz.onrender.com/uploads/${post.thumbnail}`} alt="" />
         </div>
         <p dangerouslySetInnerHTML={{__html: post.desc}}></p>
       </div>}
