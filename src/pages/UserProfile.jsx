@@ -27,7 +27,7 @@ const UserProfile = () => {
 
   useEffect(()=>{
     const getUser = async()=>{
-      const response = await axios.get(`http://localhost:5000/api/users/${currentUser.id}`,{withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
+      const response = await axios.get(`https://blog-backend-kyxz.onrender.com/api/users/${currentUser.id}`,{withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
       const {name, email, avatar} = response.data;
       setName(name)
       setEmail(email)
@@ -41,7 +41,7 @@ const UserProfile = () => {
     try {
       const postData = new FormData();
       postData.set('avatar',avatar)
-      const response = await axios.post(`http://localhost:5000/api/users/changeAvatar`, postData,{withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
+      const response = await axios.post(`https://blog-backend-kyxz.onrender.com/api/users/changeAvatar`, postData,{withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
       setAvatar(response?.data.avatar)
     } catch (error) {
       console.log(error)
@@ -58,7 +58,7 @@ const UserProfile = () => {
     userData.set('newPassword',newPassword)
     userData.set('confirmNewPassword',confirmNewPassword)
 
-    const response = await axios.patch(`http://localhost:5000/api/users/editUser`, userData, {withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
+    const response = await axios.patch(`https://blog-backend-kyxz.onrender.com/api/users/editUser`, userData, {withCredentials: true, headers: {Authorization: `Bearer ${token}`}})
     if(response.status == 200){
       navigate('/logout')
     }
@@ -77,7 +77,7 @@ const UserProfile = () => {
         <div className="profile-details">
           <div className="avatar-wrapper">
             <div className="profile-avatar">
-              <img src={`http://localhost:5000/uploads/${avatar}`} alt="" />
+              <img src={`https://blog-backend-kyxz.onrender.com/uploads/${avatar}`} alt="" />
             </div>
             <form action="" className="avatar-form" onSubmit={updateUserDetail}>
               <input
